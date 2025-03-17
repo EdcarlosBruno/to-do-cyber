@@ -43,6 +43,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    overflow: hidden; /* Adicionado para evitar estouro */
 }
 
 /* Estilos para a caixa de tarefas */
@@ -56,6 +57,7 @@ body {
     text-align: center;
     animation: fadeIn 1s ease;
     margin-bottom: 0;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 /* Título principal */
@@ -86,6 +88,7 @@ input, select {
     background-color: #111;
     color: var(--text-color);
     outline: none;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 /* Estilos para os botões */
@@ -131,6 +134,7 @@ li {
     background-color: rgba(66, 66, 66, 0.5);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 li:hover {
@@ -216,6 +220,8 @@ li.completed {
 
 /* Estilos para o container do calendário */
 #calendar-container {
+    width: 100%; /* Garante que o calendário ocupe toda a largura disponível */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
     background-color: rgba(66, 66, 66, 0.5);
     border-radius: 10px;
     border: 6px solid var(--primary-color);
@@ -224,6 +230,7 @@ li.completed {
     color: var(--text-color);
     text-align: center;
     margin-bottom: 12px;
+    padding: 10px; /* Adicionar padding para evitar que o conteúdo toque nas bordas */
 }
 
 /* Estilos para o cabeçalho do calendário */
@@ -267,6 +274,7 @@ li.completed {
     appearance: none;
     cursor: pointer;
     margin-left: 10px;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 /* Dropdown personalizado para o seletor */
@@ -297,6 +305,7 @@ li.completed {
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
     padding: 10px;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 #calendar-days span {
@@ -308,6 +317,7 @@ li.completed {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1em;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura */
 }
 
 #calendar-days span:hover {
@@ -332,12 +342,18 @@ li.completed {
     .main-container {
         flex-direction: column;
         align-items: center;
+        padding: 10px; /* Reduzir o padding para telas menores */
     }
 
     .todo-container {
         width: 95%;
         min-width: auto;
         margin-bottom: 20px;
+    }
+
+    #calendar-container {
+        width: 100%; /* Garante que o calendário ocupe toda a largura disponível */
+        box-sizing: border-box; /* Inclui o padding e a borda na largura */
     }
 }
 
@@ -346,12 +362,18 @@ li.completed {
     .main-container {
         flex-direction: column;
         align-items: center;
+        padding: 15px; /* Ajustar o padding para tablets */
     }
 
     .todo-container {
         width: 95%;
         min-width: auto;
         margin-bottom: 20px;
+    }
+
+    #calendar-container {
+        width: 100%; /* Garante que o calendário ocupe toda a largura disponível */
+        box-sizing: border-box; /* Inclui o padding e a borda na largura */
     }
 }
 
@@ -360,6 +382,7 @@ li.completed {
     .main-container {
         flex-direction: row;
         align-items: flex-start;
+        padding: 20px;
     }
 
     .todo-container {
