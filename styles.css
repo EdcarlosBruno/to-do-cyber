@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --completed-color: rgba(0, 255, 255, 0.3);
+    --bg-color: #303030;
+    --card-color: rgba(66, 66, 66, 0.5);
+    --text-color: #fff;
+    --font-color-muted: rgba(255, 255, 255, 0.8);
+    --font-size: 16px;
+}
+
+/* Reset básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://raw.githubusercontent.com/sebasrp/sebasrp/master/cyberpunk.pixelart.Akito_One.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Container principal que engloba tudo */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para a caixa de tarefas */
+.todo-container {
+    background-color: rgba(66, 66, 66, 0.5);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+    text-align: center;
+    animation: fadeIn 1s ease;
+    margin-bottom: 0;
+}
+
+/* Título principal */
+h1 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px var(--secondary-color);
+}
+
+/* Estilos para as labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+}
+
+/* Estilos para os inputs */
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #111;
+    color: var(--text-color);
+    outline: none;
+}
+
+/* Estilos para os botões */
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    border: none;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 0 30px var(--primary-color), 0 0 40px var(--secondary-color);
+    color: #fff;
+}
+
+/* Estilos para a lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Estilos para cada item da lista */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: rgba(66, 66, 66, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Estilos para o conteúdo da tarefa */
+.task-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    text-align: left;
+}
+
+/* Estilos para o nome da tarefa */
+.task-name {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+/* Estilos para a data da tarefa */
+.task-date {
+    font-size: 0.7em;
+    color: var(--font-color-muted);
+    font-style: italic;
+}
+
+/* Estilos para a prioridade da tarefa */
+.task-priority {
+    font-size: 0.7em;
+    color: var(--font-color-muted);
+    font-style: italic;
+}
+
+/* Estilos para os botões da tarefa */
+.task-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Estilos para o botão de completar */
+button.complete {
+    background-color: rgba(0, 255, 255, 0.5);
+    color: #fff;
+}
+
+button.complete:hover {
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Estilos para o botão de deletar */
+button.delete {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+button.delete:hover {
+    background-color: rgba(255, 0, 255, 0.8);
+}
+
+/* Estilos para tarefas completadas */
+li.completed {
+    background-color: var(--completed-color);
+    color: #ecf0f1;
+    text-decoration: line-through;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para o container do calendário */
+#calendar-container {
+    background-color: rgba(66, 66, 66, 0.5);
+    border-radius: 10px;
+    border: 6px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Estilos para o cabeçalho do calendário */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: 2px solid transparent;
+    color: var(--text-color);
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.calendar-header button:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px var(--secondary-color);
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para o select de ano */
+#year-select {
+    width: 90px;
+    padding: 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #111;
+    color: var(--text-color);
+    outline: none;
+    text-align: center;
+    appearance: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Dropdown personalizado para o seletor */
+#year-select option {
+    background-color: #111;
+    color: var(--text-color);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+    border: none;
+}
+
+#year-select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Foco no seletor de ano */
+#year-select:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--primary-color);
+}
+
+/* Estilos para os dias do calendário */
+#calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+#calendar-days span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+#calendar-days span:hover {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+#calendar-days span.selected {
+    background-color: rgba(0, 255, 255, 0.5);
+    color: #000;
+    border: 2px solid var(--secondary-color);
+}
+
+#calendar-days span.inactive {
+    color: var(--font-color-muted);
+}
+
+/* Media Queries para Responsividade */
+
+/* Para telas menores que 480px (celulares menores) */
+@media (max-width: 480px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-container {
+        width: 95%;
+        min-width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Para telas entre 481px e 768px (celulares maiores e tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-container {
+        width: 95%;
+        min-width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Para telas maiores que 768px (desktops e tablets maiores) */
+@media (min-width: 769px) {
+    .main-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .todo-container {
+        width: 45%;
+        min-width: 400px;
+        margin-bottom: 0;
+    }
+}

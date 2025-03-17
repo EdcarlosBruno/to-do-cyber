@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas Cyberpunk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Caixa de Tarefas -->
+        <div class="todo-container">
+            <h1>Lista de Tarefas</h1>
+
+            <!-- Campo da data -->
+            <label for="task-date">Data da Tarefa:</label>
+            <div id="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <span id="current-month"></span>
+                    <button id="next-month">&gt;</button>
+                    <select id="year-select"></select>
+                </div>
+                <div id="calendar-days"></div>
+            </div>
+            <input type="hidden" id="task-date" name="task-date">
+
+            <!-- Campo para a prioridade -->
+            <label for="task-priority">Prioridade:</label>
+            <select id="task-priority">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+
+            <!-- Campo para adicionar tarefa -->
+            <label for="task-input">Nova Tarefa:</label>
+            <input type="text" id="task-input" placeholder="Digite sua tarefa aqui">
+
+            <button id="add-task">Adicionar Tarefa</button>
+
+            <!-- Lista de Tarefas -->
+            <ul id="tasks">
+                <!-- As tarefas serão adicionadas dinamicamente -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
